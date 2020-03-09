@@ -13,3 +13,6 @@ coverage
 /.vscode
 /.babel-cache
 *.report.html
+
+./e2e/reports
+./e2e/node_modules
