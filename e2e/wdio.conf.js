@@ -80,7 +80,6 @@ exports.config = {
       language: 'en'
     }]
   ],
-  ],
 
   services: ['selenium-standalone'],
   // services: ['selenium-standalone', 'phantomjs', 'appium'],

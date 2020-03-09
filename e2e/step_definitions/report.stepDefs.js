@@ -6,7 +6,7 @@ When('I go to report page', () => {
 });
 
 Then(
-  /^I see the report screen with graph successfully updated with item (.*) and amount "(-?[0-9]+)"$/,
+  /^I see the report screen with graph successfully updated with item "(.*)" and amount "(-?[0-9]+)"$/,
   (category, amount) => {
     reportPage.validateReportPageBasic(category, amount);
   }

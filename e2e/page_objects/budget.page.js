@@ -17,7 +17,7 @@ class BudgetPage extends Page {
    */
   budgetEntry(index, forClick) {
     const currRow = `table > tbody > tr:nth-child(${index})`;
-    return forClick ? $(`${currRow  }td:nth-child(1)`) : $(currRow);
+    return forClick ? $(`${currRow} > td:nth-child(1)`) : $(currRow);
   }
 
   get deleteButton() {
@@ -64,31 +64,31 @@ class BudgetPage extends Page {
     return $('table button.submit');
   }
 
-  get editBudgetCategory(){
+  get editBudgetCategory() {
     return $('table tbody select[name="categoryId"]')
   }
 
-  get editBudgetDescription(){
+  get editBudgetDescription() {
     return $('table tbody input[name="description"]')
   }
 
-  get editBudgetAmount(){
+  get editBudgetAmount() {
     return $('table tbody input[name="value"]')
   }
 
-  get totalInflow(){
+  get totalInflow() {
     return $('div:nth-child(1) div.components-Balance-style__balanceAmount.components-Balance-style__pos')
   }
 
-  get totalOutflow(){
+  get totalOutflow() {
     return $('div:nth-child(3) div.components-Balance-style__balanceAmount.components-Balance-style__neg')
   }
 
-  get workingBalance(){
+  get workingBalance() {
     return $('div:nth-child(5) div.components-Balance-style__balanceAmount.components-Balance-style__pos')
   }
 
-  get amountAddButton(){
+  get amountAddButton() {
     return $('//button[text()="Add"]');
   }
 
@@ -110,16 +110,16 @@ class BudgetPage extends Page {
       this.budgetEntry(1, true).click();
       this.deleteButton.click();
     }
-  }
-  }
-  addBudgetItem(category, description, amount){
+  } 
+
+  addBudgetItem(category, description, amount) {
     this.addBudgetCategory.selectByVisibleText(category); 
     this.addBudgetDescription.setValue(description);
     this.addBudgetAmount.setValue(amount);
     this.amountAddButton.click();
   }
 
-  editBudgetItem(index,category, description, cancelFlag){
+  editBudgetItem(index,category, description, cancelFlag) {
     this.budgetEntry(index, true).click();
     this.editBudgetCategory.selectByVisibleText(category); 
     this.editBudgetDescription.addValue(description);
@@ -135,11 +135,11 @@ class BudgetPage extends Page {
     }
   }
 
-  validateTotalAmount(amount, type){
+  validateTotalAmount(amount, type) {
     assert.equal(utilities.formatAmount(amount), this[`total${  type}`].getText()); 
   };
 
-  validateWorkingBalance(amount){
+  validateWorkingBalance(amount) {
     assert.equal(utilities.convertAmount(amount, amount < 0), this.workingBalance.getText());
   };
 
@@ -149,7 +149,7 @@ class BudgetPage extends Page {
     assert.equal(utilities.convertAmount(amount, type === 'Outflow'), this.latestAmount.getText());
   }
 
-  deleteItem(index){
+  deleteItem(index) {
     this.budgetEntry(index, true).click();
     this.deleteButton.click();
   }

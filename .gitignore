@@ -14,5 +14,5 @@ coverage
 /.babel-cache
 *.report.html
 
-./e2e/reports
+./e2e/reports/*
 ./e2e/node_modules
