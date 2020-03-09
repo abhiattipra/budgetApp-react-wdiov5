@@ -1,69 +1,97 @@
-# Budget app -Test Plan and Architecture
-**A guide to understand and execute functional testing strategies used for testing Budget APP**
-## Scope
-###### Areas to be tested
-Functionalities like add item. edit item, inflow, outflow calculations, reports, charts based on data, design consistency, data consistency across pages, and user experience. The app will be tested in diferent browsers and latest mobile devices  
+# Budget app - e2e Test Plan and Framework
 
-###### Areas not to be tested
-Page refresh scenarios, network latency, App's perforamce with huge user data, style checks. The app will not be tested in android phones below 5.4 and iPhones below 8.0
+**A guide to understand and execute functional testing strategies used for testing Budget app**
+
+## Scope
+
+Functionalities like add/edit budget item, inflow-outflow calculations, reports and its charts based on data, design consistency, data consistency across pages, and user experience is to be covered, with cross-platform support. 
+
+Page refresh scenarios, network latency, app's performance with huge user data, style checks are not ccovered. The app will not be tested in android phones below 5.4 and iPhones below 8.0.
+
+## Test Plan
+
+![Test plan Mind Map](https://github.com/abhiattipra/budgetApp-react-wdiov5/master/e2e/images/budgetAppMindMapTestPlan.png)
 
 # End to End test framework
 
-The framework used is WebdriverIO-V5, a test automation framework that allows us to run tests based on Selenium's Webdriver protocol and requires Node.js to run
+The framework used is _WebdriverIO-V5_, a test automation framework that allows us to run tests based on Selenium's Webdriver protocol and requires Node.js to run.
 
-Test are written using **Cucumber(BDD format)**
-Reports are generated using **Cucumber-html-reporter**
-Design pattern used is **Page Object Model**
-Browsers supported are **Chrome**(default) and **Firefox**
+Test are written using _Cucumber(BDD format)_
 
-Ps: The tests are written in Linux environment and should be working (not tested) in Mac or Windows env.
+Reports are generated using _Cucumber-html-reporter_
+
+Design pattern used is _Page Object Model_
+
+Browsers supported are _Chrome_(default) and _Firefox_
+
+
+_PS: The tests are written in Linux environment and should be working(not tested) in Mac or Windows env._
 
 
 
 
-#### Setup
-###### Prerequiste environment
-**JDK 1.8:**
-Install JDK 1.8+ and make sure class path is set properly based on your OS. 
-Java (https://www.java.com/en/download/) - Installed and added to your path.JAVA is require to start Selenium Server nothing else.
+### Setup
+##### Prerequiste environment
 
-**Node v8.10.0 and Above.**
-While earlier versions of node may work, they have not been tested or verified.
-[Download Node.js](http://nodejs.org/en/ "Download Node.js") 
-Follow the instructions for install. 
-To check installation is successful, run `$ node -v`  in the terminal, you should see the Node version installed.
+* JDK - 1.8+
+* Node - v8.10.0 or above
+* NPM
 
-**NPM**
-This will be installed with node. To check, run `$ npm -v` in the terminal, you should see the NPM version installed.
-If not installed, follow the instructions for install from the link below.
-[Dowload NPM]( https://www.npmjs.com/)
 
-Few additional tools like [GIT](http://git-scm.com/downloads "GIT") and a [suitable IDE](https://code.visualstudio.com/download "suitable IDE") should be already be installed
+##### To start the app
 
-Now follow the commands
-`$ git clone https://github.com/abhiattipra/budgetAppE2E `
-Go to the clones location and from the root folder 
-`$ npm install`
-`$ npm start`
+* Clone the [project repo](https://github.com/abhiattipra/budgetApp-react-wdiov5.git), if not already done
+* Ensure you are within the cloned folder `budgetApp-react-wdiov5`
+* Run `npm install`
+* Run `npm start`, to have app running on http://localhost:8000/budget
 
-Now that you have our budget app runing on localhost-port: 8000
-http://localhost:8000/budget
-###### Test framework 
+
+
+
+### Test framework 
 
 #### To run tests : 
-Go to cd into **/e2e** folder  and execute `$npm install` and then `$ npm test`
 
-By default test will be running in Chrome. If you want to change to firefox,  go to  **/e2e/wdio.conf.js** and edit- replace with **firefox** instead of chrome in the below line 2
+##### Prerequiste
+* Ensure you are within the cloned folder `budgetApp-react-wdiov5`
+* `$ cd e2e`
+* Run `npm install`
+
+##### Start Test execution
+
+Run `npm test` to automate given test scenarios.
+
+##### Browser Configuration
+
+Default browser configuration to run tests is specified in **/e2e/wdio.conf.js**, as below:
 
 ```javascript
 capabilities: [
-      browserCapabilities['chrome'] 
+      browserCapabilities.chrome
     ],
 ```
-###### To view test report :
-Linux- `$ npm run report`
-Mac-`$ npm run report-mac`
-Windows - `$ npm run report-windows`
-and you will see the test report  in your default browser
+
+Update **chrome** to **firefox** to run tests in firefox browser.
+
+
+##### To view test report :
+
+Use below commands to see the test report in your default browser(configured above).
+
+Linux
+<pre>
+$ npm run report
+</pre>
+
+Mac
+<pre>
+$ npm run report-mac
+</pre>
+
+Windows
+<pre>
+$ npm run report-windows
+</pre>
+
 
 
