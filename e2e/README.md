@@ -1,10 +1,19 @@
+# Budget app -Test Plan and Architecture
+**A guide to understand and execute functional testing strategies used for testing Budget APP**
+## Scope
+###### Areas to be tested
+Functionalities like add item. edit item, inflow, outflow calculations, reports, charts based on data, design consistency, data consistency across pages, and user experience. The app will be tested in diferent browsers and latest mobile devices  
+
+###### Areas not to be tested
+Page refresh scenarios, network latency, App's perforamce with huge user data, style checks. The app will not be tested in android phones below 5.4 and iPhones below 8.0
+
 # End to End test framework
 
 The framework used is WebdriverIO-V5, a test automation framework that allows us to run tests based on Selenium's Webdriver protocol and requires Node.js to run
 
 Test are written using **Cucumber(BDD format)**
 Reports are generated using **Cucumber-html-reporter**
-Design pattern used is **Page Object Model **
+Design pattern used is **Page Object Model**
 Browsers supported are **Chrome**(default) and **Firefox**
 
 Ps: The tests are written in Linux environment and should be working (not tested) in Mac or Windows env.
@@ -44,7 +53,7 @@ http://localhost:8000/budget
 #### To run tests : 
 Go to cd into **/e2e** folder  and execute `$npm install` and then `$ npm test`
 
-By default test will be running in Chrome. If you want to change to firefox,  go to  **/e2e/wdio.conf.js** and edit- replace with** firefox** instead of chrome in the below line 2
+By default test will be running in Chrome. If you want to change to firefox,  go to  **/e2e/wdio.conf.js** and edit- replace with **firefox** instead of chrome in the below line 2
 
 ```javascript
 capabilities: [
