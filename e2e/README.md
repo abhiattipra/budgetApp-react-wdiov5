@@ -10,9 +10,11 @@ Page refresh scenarios, network latency, app's performance with huge user data, 
 
 ## Test Plan
 
-![Test plan Mind Map](https://github.com/abhiattipra/budgetApp-react-wdiov5/master/e2e/images/budgetAppMindMapTestPlan.png)
+![Test plan Mind Map](https://github.com/abhiattipra/budgetApp-react-wdiov5/blob/master/e2e/images/TestPlanMindMap.png)
 
-# End to End test framework
+---
+
+# End-to-End Test Framework
 
 The framework used is _WebdriverIO-V5_, a test automation framework that allows us to run tests based on Selenium's Webdriver protocol and requires Node.js to run.
 
@@ -30,38 +32,36 @@ _PS: The tests are written in Linux environment and should be working(not tested
 
 
 
-### Setup
-##### Prerequiste environment
+### System Requirements
 
 * JDK - 1.8+
 * Node - v8.10.0 or above
 * NPM
 
-
-##### To start the app
+### Local Environment Setup
 
 * Clone the [project repo](https://github.com/abhiattipra/budgetApp-react-wdiov5.git), if not already done
 * Ensure you are within the cloned folder `budgetApp-react-wdiov5`
 * Run `npm install`
+
+### Start Budget app
+
 * Run `npm start`, to have app running on http://localhost:8000/budget
 
+---
 
 
+### Local Test Environment Setup
 
-### Test framework 
-
-#### To run tests : 
-
-##### Prerequiste
 * Ensure you are within the cloned folder `budgetApp-react-wdiov5`
-* `$ cd e2e`
+* Run `cd e2e`
 * Run `npm install`
 
-##### Start Test execution
+### Start Test execution
 
 Run `npm test` to automate given test scenarios.
 
-##### Browser Configuration
+### Browser Configuration
 
 Default browser configuration to run tests is specified in **/e2e/wdio.conf.js**, as below:
 
@@ -73,8 +73,9 @@ capabilities: [
 
 Update **chrome** to **firefox** to run tests in firefox browser.
 
+---
 
-##### To view test report :
+### View Test Report :
 
 Use below commands to see the test report in your default browser(configured above).
 
@@ -93,5 +94,4 @@ Windows
 $ npm run report-windows
 </pre>
 
-
-
+---
