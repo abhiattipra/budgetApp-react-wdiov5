@@ -6,7 +6,7 @@
 
 Functionalities like add/edit budget item, inflow-outflow calculations, reports and its charts based on data, design consistency, data consistency across pages, and user experience is to be covered, with cross-platform support. 
 
-Page refresh scenarios, network latency, app's performance with huge user data, style checks are not ccovered. The app will not be tested in android phones below 5.4 and iPhones below 8.0.
+Page refresh scenarios, network latency, app's performance with huge user data, style checks are not covered. 
 
 ## Test Plan
 
