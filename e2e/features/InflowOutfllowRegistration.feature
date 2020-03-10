@@ -8,8 +8,8 @@ Then Total Inflow and Working Balance is properly updated
 
 Scenario Outline: Check outflow registration & balance updation
 When I add outflow item "<expenseType>" with description "<text>" and amount "<value>"
-Then outflow item "<expenseType>" should be added with description "<text>" and value "<value>"
-Then total Inflow is "<totalInflow>" and total ouflow is "<totalOutFlow>" and Working balance is "<workingBalance>"
+Then Outflow item "<expenseType>" should be added with description "<text>" and value "<value>"
+Then Total Inflow is "<totalInflow>" and Total Ouflow is "<totalOutFlow>" and Working Balance is "<workingBalance>"
 
 #The test with commute budget entry here will fail as Working Balance is not displaying negative values when inflow < outflow. In such cases either a negative value should be displayed or a proper error/user message.
 Examples:

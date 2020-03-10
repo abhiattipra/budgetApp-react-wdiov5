@@ -22,23 +22,24 @@ Given(/^I add outflow item "(.+)" with description "(.*)" and amount "(-?[0-9]+)
 });
 
 Then(
-  /^outflow item "(.+)" should be added with description "(.*)" and value "(-?[0-9]+)"$/,
+  /^Outflow item "(.+)" should be added with description "(.*)" and value "(-?[0-9]+)"$/,
   (expenseType, text, value) => {
     budgetPage.verifyLatestAddition('Outflow', expenseType, text, value);
   }
 );
 
 Then(
-  /^total Inflow is "(-?[0-9]+)" and total ouflow is "(-?[0-9]+)" and Working balance is "(-?[0-9]+)"$/,
+  /^Total Inflow is "(-?[0-9]+)" and Total Ouflow is "(-?[0-9]+)" and Working Balance is "(-?[0-9]+)"$/,
   (totalInflow, totalOutFlow, workingBalance) => {
     budgetPage.validateTotalAmount(totalInflow, 'Inflow');
     budgetPage.validateTotalAmount(totalOutFlow, 'Outflow');
     budgetPage.validateWorkingBalance(workingBalance);
   }
 );
-When("I can successfully update the second item's entry and its description", () => {
+When('I can successfully update the category of second item and its description', () => {
   budgetPage.editBudgetItem('2', 'Commute', ' and car repair');
 });
+
 When('I can attempt to update second item but can decide to cancel successfully', () => {
   budgetPage.editBudgetItem('2', 'Commute', ' and car repair', 'cancelFlag');
 });

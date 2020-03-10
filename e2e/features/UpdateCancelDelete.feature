@@ -2,7 +2,7 @@ Feature: Validate Update-Delete-Cancel fucntionality
  
 Scenario: Check item update functionality
 Given I am on budget app home page
-Then I can successfully update the second item's entry and its description
+Then I can successfully update the category of second item and its description
 
 
 Scenario: Check item update-cancel functionality
