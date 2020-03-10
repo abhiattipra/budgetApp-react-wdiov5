@@ -94,4 +94,8 @@ Windows
 $ npm run report-windows
 </pre>
 
+<br/>
+<br/>
+**Note:** One test scenario fails in automation where Total Outflow > Total Inflow as it expects Working Balance to be -ve. However, there is no -ve Working Balance generated in app and no user guide text is displayed in that case.
+
 ---
